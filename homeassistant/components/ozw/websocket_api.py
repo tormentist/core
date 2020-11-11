@@ -118,7 +118,7 @@ def _call_util_function(hass, connection, msg, send_result, function, *args):
 @websocket_api.websocket_command(
     {
         vol.Required(TYPE): "ozw/migrate_zwave",
-        vol.Optional(DRY_RUN, default=True): vol.Coerce(bool),
+        vol.Optional(DRY_RUN, default=True): bool,
     }
 )
 async def websocket_migrate_zwave(hass, connection, msg):
